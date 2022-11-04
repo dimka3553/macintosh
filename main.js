@@ -72,7 +72,6 @@ let spectable = document.querySelector(".spectable");
 let o = document.querySelector(".o");
 let q = document.querySelector(".q");
 let nav = document.querySelector("nav");
-console.log(canvas);
 
 function moveCamera() {
   const t = -document.body.getBoundingClientRect().top / 5;
@@ -83,7 +82,6 @@ function moveCamera() {
       camera.position.y = 0;
     } else if (t < 300 && t >= 0) {
       camera.position.z = t * 0.01;
-      console.log(camera.position.z);
       topSec.style.opacity = 1 - t * 0.0055;
       topSec.style.scale = 1 + t * 0.0055;
       mac.rotation.y = 0;
@@ -96,7 +94,6 @@ function moveCamera() {
       topSec.style.opacity = 0;
       camera.position.z = t * 0.01;
       camera.position.y = (t - 300) * 0.02;
-      console.log(camera.position.z);
       mac.rotation.y = 0;
       m.style.top = 0 + "px";
       canvas.style.top = 0 + "px";
@@ -180,7 +177,6 @@ function moveCamera() {
       nav.style.height = 100 + "vh";
     }
   }
-  console.log(t);
 }
 
 window.onbeforeunload = function () {
