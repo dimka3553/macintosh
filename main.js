@@ -72,6 +72,7 @@ let spectable = document.querySelector(".spectable");
 let o = document.querySelector(".o");
 let q = document.querySelector(".q");
 let nav = document.querySelector("nav");
+let logo = document.querySelector("#logo");
 
 function moveCamera() {
   const t = -document.body.getBoundingClientRect().top / 5;
@@ -171,10 +172,13 @@ function moveCamera() {
       spectable.style.marginLeft = "auto";
       spectable.style.marginRight = "auto";
       nav.style.height = 60 + "px";
+      logo.style.scale = 1;
     } else if (t >= 1780 && t < 1880) {
       nav.style.height = (t - 1780) * 1 + "vh";
+      logo.style.scale = 1 + (t - 1780) * 0.02;
     } else {
       nav.style.height = 100 + "vh";
+      logo.style.scale = 3;
     }
   }
 }
