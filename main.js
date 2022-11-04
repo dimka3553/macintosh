@@ -35,7 +35,7 @@ const loader = new GLTFLoader();
 
 let mac;
 
-async function loadModel() {
+function loadModel() {
   loader.load("./model/scene.gltf", function (gltf) {
     gltf.scene.position.set(0, -0.3, -1.3);
     mac = gltf.scene;
@@ -44,7 +44,7 @@ async function loadModel() {
   });
 }
 
-mac = await loadModel();
+mac = loadModel();
 
 function animate() {
   requestAnimationFrame(animate);
